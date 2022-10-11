@@ -1,0 +1,187 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+    <style>
+        .openButton {
+            border: none;
+            font-size: 16px;
+            background-color: purple;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+        }
+
+        .softlockPopup {
+            position: relative;
+            text-align: center;
+            width: 100%;
+        }
+
+        .formPopup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, 5%);
+            border: 3px solid #999999;
+            z-index: 9;
+            background-color: wheat;
+        }
+
+        .formContainer {
+            max-width: 800px;
+            padding: 30px;
+            background-color: wheat;
+        }
+
+            .formContainer .btn {
+                border: none;
+                background-color: forestgreen;
+                color: black;
+                font-size: large;
+                padding-right: 5px;
+                width: 50%;
+                display: inline;
+                float: left;
+            }
+
+            .formContainer .cancel {
+                background-color: #cc0000;
+                display: inline;
+                float: right;
+                font-size: large;
+            }
+
+
+
+        .iconDetails {
+            margin-left: 2%;
+            float: left;
+            height: 20%;
+            width: 20%;
+        }
+
+        .container2 {
+            width: 100%;
+            height: auto;
+            padding: 1%;
+        }
+
+        h1 {
+            margin: 0px;
+        }
+
+        tbl{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            float: left;
+            width: 10em;
+            margin-right: 1em;
+        }
+
+
+    </style>
+</head>
+
+<div class='container2'>
+    <div>
+        <img src="~/artboard-3@3x.png" class='iconDetails'>
+    </div>
+    <div style='margin-left:60px;'>
+        <h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp  Work Force Management Portal</h1>
+        <h4 style="color:mediumvioletred"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp   Welome WFM_Manager!</h4>
+       
+    </div>
+</div>
+<br />
+<br />
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></Script>
+
+<div id="div">
+    <center>
+    <table class="tbl">
+        <thead class="table table-dark">
+        <th>Employee ID</th>
+        <th>Requestee</th>     
+        <th>Request Date</th>
+        <th>Employee Manager</th>
+        <th></th>
+        </thead>
+        <tbody id="tbody" class="table table-info">
+        </tbody>
+
+    </table>
+    </center>
+    <br />
+    <br />
+    <div>
+        @Html.ActionLink("Back to Login", "Login")
+       
+    </div>
+   
+</div>
+
+
+<div class="softlockPopup">
+    <div class="formPopup" id="popupForm">
+        <form class="formContainer">
+                <h1 style="background-color:darkblue; color:white">Softlock Request Confirmation</h1>
+                <h4 style="color:deeppink">Status update for the request lock</h4>
+                <br/>
+                <br/>
+
+           
+                <label  style="color:white ; background-color:darkblue">Employee ID:      </label>
+                <input type="number" id="emp" value=" "  style="border:none;  background-color:none">
+                <br />
+                <br />
+               
+                <label style="color:white ; background-color:darkblue">Requestee:      </label>
+                <input type="text" id="requestee" value=" "  style="border:none;  background-color:none">
+                <br />
+                <br />
+               
+                <label style="color:white ; background-color:darkblue">Employee Manager:      </label>
+                <input type="text" id="Empmanager" value=" "  style="border:none;  background-color:none">
+                <br />
+                <br />
+                    
+                
+                <label style="color:white ; background-color:darkblue">Request Message:      </label>
+                <input type="text" id="Reqmessage" value=" " style="border:none;  background-color:none">
+                <br />
+                <br />
+            
+
+                <label style="color:white ; background-color:darkblue">Status      </label>
+                <select name="province" id="province">
+                    <option>Approve</option>
+                    <option>Reject</option>
+                </select>
+             
+                <br />
+                <br />
+
+                <button type="submit" class="btn" id="store" onclick="Send()">Send Request</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/wfmscript.js"></script>
