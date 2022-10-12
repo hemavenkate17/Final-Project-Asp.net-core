@@ -26,7 +26,7 @@ namespace WFM_WebAPI.Controllers
             _context = context;
         }
 
-  
+        [Authorize]
         // GET: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employees_Skills>>> GetEmployees()

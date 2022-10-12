@@ -10274,11 +10274,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Asp.net Core Training Project\\WFM_WebAPI\\WFM_WebAPI\\WFM_WebAPI.csproj",
+      "projectUniqueName": "D:\\Asp.net Core Training Project\\WFM Api and Client Code\\WFM_WebAPI\\WFM_WebAPI.csproj",
       "projectName": "WFM_WebAPI",
-      "projectPath": "D:\\Asp.net Core Training Project\\WFM_WebAPI\\WFM_WebAPI\\WFM_WebAPI.csproj",
+      "projectPath": "D:\\Asp.net Core Training Project\\WFM Api and Client Code\\WFM_WebAPI\\WFM_WebAPI.csproj",
       "packagesPath": "C:\\Users\\hemalathav\\.nuget\\packages\\",
-      "outputPath": "D:\\Asp.net Core Training Project\\WFM_WebAPI\\WFM_WebAPI\\obj\\",
+      "outputPath": "D:\\Asp.net Core Training Project\\WFM Api and Client Code\\WFM_WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hemalathav\\AppData\\Roaming\\NuGet\\NuGet.Config",

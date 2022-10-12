@@ -5,7 +5,7 @@ $(document).ready(
     function () {
         $('#submit').click(function () {
             console.log('Test');
-       
+            debugger;
              
             $.ajax({
                 url: 'https://localhost:44301/Users/authenticate',
@@ -28,15 +28,16 @@ $(document).ready(
                     EmployeeList()
                     console.log(token)
                     function EmployeeList() {
+                        debugger;
                         $.ajax({
                             url: "https://localhost:44378/api/Employees",
-                            type: 'GET',
-                            
+                            type: 'GET',                            
                             //passing token to get employee details
                             headers: {"Authorization": 'Bearer ' + token },
                             success: function (data, textStatus, jQxhr) {
                             debugger;                              
-                            console.log(JSON.stringify(data));
+                                console.log(JSON.stringify(data));
+                                alert('Welocome'+ response.role)
                             if (response.role == "Manager") {
                                 window.location.replace('https://localhost:44378/Home/ManagerHome')
                             }

@@ -33,7 +33,7 @@ function Send(lockid) {
     document.getElementById("popupForm").style.display = "block";
     document.getElementById("div").style.display = "none";
 
-    
+    console.log(lockid)
     console.log('send test')
     $.ajax({
         url: 'https://localhost:44301/api/softlocks/'+ lockid,
@@ -66,7 +66,18 @@ function Send(lockid) {
                 }),
 
                 success: function (data, textStatus, jQxhr) {
+                    debugger;
                     alert('Your Request updated');
+                    softlockstatus = $('#province').val()
+                    
+                    console.log(softlockstatus,lock)
+                    if (softlockstatus = 'Approve') {
+                        var lock = 'Locked'
+                    }
+                    else
+                    {
+                        var lock = 'Not Requested'
+                    }
                     $.ajax({
                         url: 'https://localhost:44301/api/Employees/' + emp,
                         dataType: 'json',
@@ -75,7 +86,7 @@ function Send(lockid) {
                         contentType: 'application/json',
                         data: JSON.stringify({
                             employee_id: $('#emp').val(),
-                            lockstatus: "Locked"
+                            lockstatus: lock
                         }),
 
                         success: function (data, textStatus, jQxhr) {
